@@ -2,9 +2,10 @@ package br.com.clubedosbarbas.barbeariaapi.repository;
 
 import br.com.clubedosbarbas.barbeariaapi.model.Barbeiro;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.security.core.userdetails.UserDetails;
 
-@Repository
 public interface BarbeiroRepository extends JpaRepository<Barbeiro, Long> {
+
+    UserDetails findByUsername(String username);
 
 }
