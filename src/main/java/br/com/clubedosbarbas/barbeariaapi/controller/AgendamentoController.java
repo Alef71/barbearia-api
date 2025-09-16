@@ -25,8 +25,8 @@ public class AgendamentoController {
 
     @GetMapping
     public ResponseEntity<List<Agendamento>> buscarAgendaDoDia(
-            @RequestParam Long barbeiroId,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate data) {
+            @RequestParam("barbeiroId") Long barbeiroId,
+            @RequestParam("data") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate data) {
 
         List<Agendamento> agenda = agendamentoService.buscarAgendaDoDia(barbeiroId, data);
         return ResponseEntity.ok(agenda);
